@@ -12,7 +12,7 @@ var Nav = (props) => {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <span className="navbar-brand">ReactTime App</span>
+            <span className="navbar-brand">React Timer App</span>
           </div>
 
           <div className="collapse navbar-collapse" id="app-navbar-collapse">

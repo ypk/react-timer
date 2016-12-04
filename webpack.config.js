@@ -12,7 +12,7 @@ var webpackConfig = {
         appPath
     ],
     externals: {
-        jquery: 'jQuery',
+        'jquery': 'jQuery',
     },
     module: {
         loaders: [{
@@ -46,7 +46,7 @@ var webpackConfig = {
     plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery',
+            jQuery: 'jquery'
         })
     ],
     resolve: {
@@ -54,8 +54,10 @@ var webpackConfig = {
         alias: {
             Main: 'app/components/Main.jsx',
             Nav: 'app/components/Nav.jsx',
+            Clock: 'app/components/Clock.jsx',
             Timer:  'app/components/Timer.jsx',
             Countdown: 'app/components/Countdown.jsx',
+            CountdownForm: 'app/components/CountdownForm.jsx',
             AppStyles: 'app/styles/app.scss'
         },
         extensions: ['', '.js', '.jsx']
