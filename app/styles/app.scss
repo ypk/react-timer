@@ -1,10 +1,12 @@
 @import "base/variables";
+@import "components/controls";
 @import "components/navigation";
 @import "components/clock";
 @import "components/countdown";
+@import "components/main";
 
-body{
-  margin: 0px;
-  padding: 0px;
-  font-size: 16px;
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
 }

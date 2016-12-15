@@ -22,9 +22,9 @@ var Countdown = React.createClass({
             }
         }
     },
-    componentWillUnmount: function(){
-      clearInterval(this.timer);
-      this.timer = undefined;
+    componentWillUnmount: function() {
+        clearInterval(this.timer);
+        this.timer = undefined;
     },
     startTimer: function() {
         this.timer = setInterval(() => {
@@ -35,12 +35,16 @@ var Countdown = React.createClass({
                     : 0
             });
 
-            if(newTime ===0){
+            if (newTime === 0) {
                 this.setState({clockStatus: 'stopped'});
             }
         }, 1000);
     },
     handleSetTime: function(time) {
+        if (isNaN(time)) {
+            alert("Please enter a time");
+            return;
+        }
         this.setState({time: time, clockStatus: 'running'});
     },
     handleClockStatusChange: function(clockStatus) {
@@ -58,6 +62,7 @@ var Countdown = React.createClass({
 
         return (
             <div>
+                <h3 className="page-title">Countdown</h3>
                 <div className="countdown center-block">
                     <Clock time={time}/>
                 </div>

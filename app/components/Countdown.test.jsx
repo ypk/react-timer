@@ -13,7 +13,7 @@ describe('Countdown Test Suite', () => {
 
 
   describe('handle SetCountdown', () => {
-    it('Should setStates of to "clockStatus" and "time"', () => {
+    it('Should setStates of to "clockStatus" and "time"', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown />);
       countdown.handleSetTime(10);
 
@@ -30,7 +30,7 @@ describe('Countdown Test Suite', () => {
       }, 1001);
     });
 
-    it('Should check if clock goes negative', () => {
+    it('Should check if clock goes negative', (done) => {
       var countdown = TestUtils.renderIntoDocument(<Countdown />);
       countdown.handleSetTime(1);
 
@@ -39,6 +39,19 @@ describe('Countdown Test Suite', () => {
         expect(time).toBe(0);
         done();
       }, 2001);
+    });
+
+    it('should pause countdown on paused status', (done) => {
+      var countdown = TestUtils.renderIntoDocument(<Countdown />);
+      countdown.handleSetTime(5);
+      countdown.handleClockStatusChange('paused');
+      setTimeout(()=>{
+        var time = countdown.state.time;
+        var clockStatus = countdown.state.clockStatus;
+        expect(clockStatus).toBe("paused");
+        expect(time).toBe(5);
+        done();
+      }, 1001);
     });
   });
 

@@ -24,7 +24,7 @@ var Clock = React.createClass({
   render: function(){
     var {time} = this.props;
     return(
-      <div className="center-block clock">
+      <div className="clock">
         <span className="clock-text">{this.formatTime(time)}</span>
       </div>
     );

@@ -1,22 +1,6 @@
 .countdown-form {
-
     .form-control-custom {
         background: transparent;
         border-radius: 0;
-    }
-
-    .btn-custom {
-        border: 1px solid $button-color;
-        color: $button-color;
-        background: transparent;
-        border-radius: 0;
-        padding: 0.6em 1em;
-
-        &:focus,
-        &:hover {
-            border: 1px solid $button-hover-color;
-            color: $button-hover-color;
-            background: transparent;
-        }
     }
 }

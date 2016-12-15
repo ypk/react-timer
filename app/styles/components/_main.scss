@@ -1,0 +1,12 @@
+.center-custom {
+    float: none;
+    margin: 0 auto;
+    width: 320px;
+
+    h3{
+      &.page-title{
+        text-align: center;
+        font-size: 32px;
+      }
+    }
+}

@@ -20,7 +20,7 @@ var CountdownForm = React.createClass({
                 </div>
                 <div className="form-group">
                     <div className="col-sm-12">
-                        <input type="submit" className="btn btn-custom btn-large btn-block" value="Start"/>
+                        <input type="submit" className="btn btn-custom btn-large btn-block btn-start" value="Start"/>
                     </div>
                 </div>
             </form>

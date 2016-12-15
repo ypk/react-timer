@@ -11,9 +11,6 @@ var Controls = React.createClass({
             this.props.onStatusChange(status);
         };
     },
-    componentWillReceiveProps: function(props){
-      console.log(props)
-    },
     render: function() {
         var {clockStatus} = this.props;
 
@@ -21,15 +18,23 @@ var Controls = React.createClass({
             if (clockStatus === "running") {
                 return (
                   <div className="col-xs-6">
-                      <input type="button" onClick={this.onStatusChange('paused')} className="btn btn-custom btn-large btn-block" value="Pause"></input>
+                      <input type="button" onClick={this.onStatusChange('paused')} className="btn btn-custom btn-large btn-block btn-pause" value="Pause"></input>
                   </div>
                 );
-            } else if (clockStatus === "paused") {
-              return (
-                <div className="col-xs-6">
-                    <input type="button" onClick={this.onStatusChange('running')} className="btn btn-custom btn-large btn-block" value="Resume"></input>
-                </div>
-              );
+            } else {
+              if (clockStatus === "paused") {
+                return (
+                  <div className="col-xs-6">
+                      <input type="button" onClick={this.onStatusChange('running')} className="btn btn-custom btn-large btn-block btn-start" value="Resume"></input>
+                  </div>
+                );
+              }else{
+                return (
+                  <div className="col-xs-6">
+                      <input type="button" onClick={this.onStatusChange('running')} className="btn btn-custom btn-large btn-block btn-start" value="Start"></input>
+                  </div>
+                );
+              }
             }
         };
 
@@ -37,7 +42,7 @@ var Controls = React.createClass({
             <div className="countdown-form">
                 {renderButton()}
                 <div className="col-xs-6">
-                    <input type="button" onClick={this.onStatusChange('stopped')} className="btn btn-custom btn-large btn-block" value="Clear"></input>
+                    <input type="button" onClick={this.onStatusChange('stopped')} className="btn btn-custom btn-large btn-block btn-clear" value="Clear"></input>
                 </div>
             </div>
         );

@@ -1,0 +1,37 @@
+.btn {
+    &.btn-custom {
+        border: 1px solid $button-color;
+        color: $button-color;
+        background: transparent;
+        border-radius: 0;
+        font-weight: bold;
+        padding: 0.6em 1em;
+
+        &:focus,
+        &:hover {
+            border: 1px solid $button-hover-color;
+            color: $button-hover-color;
+            background: transparent;
+        }
+
+        &.btn-clear{
+          color: $white;
+          background: $button-red;
+          border: 1px solid $button-red;
+          &:focus,
+          &:hover {
+              background: $button-hover-red;
+              border: 1px solid $button-hover-red;
+          }
+        }
+
+        &.btn-start{
+          color: $white;
+          background: $button-color;
+          &:focus,
+          &:hover {
+              background: $button-hover-color;
+          }
+        }
+    }
+}
