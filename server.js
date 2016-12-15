@@ -1,11 +1,23 @@
 var express = require('express');
-var app = express();
 
-var port = process.env.port || 8080;
-var path = __dirname + '/public';
+var server = express();
 
-app.use(express.static(path));
+const PORT = process.env.PORT || 8080;
 
-app.listen(port, function() {
-    console.info("Webserver running on port", port);
+var directory = "public";
+
+var path = express.static(directory);
+
+server.use(function(request, response, next) {
+    if (request.headers['x-forwarded-proto'] === 'https') {
+        response.redirect('http://' + request.hostname + request.url);
+    } else {
+        next();
+    }
+});
+
+server.use(path);
+
+server.listen(PORT, function() {
+    console.log("Server started on port: " + PORT);
 });
