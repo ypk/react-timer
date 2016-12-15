@@ -15,7 +15,7 @@ var CountdownForm = React.createClass({
             <form ref="form" onSubmit={this.processForm} className="form-horizontal countdown-form">
                 <div className="form-group">
                     <div className="col-sm-12">
-                        <input type="text" ref="time" placeholder="Enter the time in seconds" className="form-control form-control-custom" id="input"/>
+                        <input type="number" ref="time" placeholder="Enter the time in seconds" className="form-control form-control-custom" id="input"/>
                     </div>
                 </div>
                 <div className="form-group">
